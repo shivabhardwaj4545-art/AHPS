@@ -1,0 +1,72 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        serif: ['Merriweather', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+      },
+      colors: {
+        primary: {
+          DEFAULT: '#001243',
+          container: '#14275E',
+          fixed: '#DCE1FF',
+          'fixed-dim': '#B5C4FF',
+        },
+        secondary: {
+          DEFAULT: '#385AAF',
+          container: '#85A6FF',
+          fixed: '#DAE1FF',
+          'fixed-dim': '#B3C5FF',
+        },
+        tertiary: {
+          DEFAULT: '#1F1500',
+          container: '#392800',
+          fixed: '#FFDF9E',
+          'fixed-dim': '#EBC166',
+          gold: '#C9A24B',
+        },
+        'on-primary': '#FFFFFF',
+        'on-primary-container': '#7F90CD',
+        'on-secondary': '#FFFFFF',
+        'on-secondary-container': '#09388C',
+        'on-tertiary': '#FFFFFF',
+        'on-tertiary-container': '#B28D38',
+        'on-tertiary-fixed': '#261A00',
+        'on-surface': '#0D1A3C',
+        'on-surface-variant': '#454650',
+        background: '#FAF8FF',
+        surface: '#FAF8FF',
+        'surface-container-lowest': '#FFFFFF',
+        'surface-container-low': '#F2F3FF',
+        'surface-container': '#EBEDFF',
+        'surface-container-high': '#E3E7FF',
+        'surface-container-highest': '#DBE1FF',
+        'surface-tint': '#4B5C95',
+        'outline-variant': '#C5C6D1',
+        outline: '#757681',
+        error: {
+          DEFAULT: '#BA1A1A',
+          container: '#FFDAD6',
+        },
+        'on-error': '#FFFFFF',
+        'on-error-container': '#93000A',
+      },
+      borderRadius: {
+        DEFAULT: '0.25rem',
+        lg: '0.5rem',
+        xl: '0.75rem',
+        '2xl': '1rem',
+        full: '9999px',
+      },
+      boxShadow: {
+        card: '0 1px 3px 0 rgba(15, 27, 61, 0.05), 0 1px 2px -1px rgba(15, 27, 61, 0.03)',
+        'card-hover': '0 8px 16px -3px rgba(20, 39, 94, 0.08), 0 4px 6px -2px rgba(20, 39, 94, 0.04)',
+        'modal': '0 20px 25px -5px rgba(15, 27, 61, 0.12), 0 10px 10px -5px rgba(15, 27, 61, 0.04)',
+      },
+    },
+  },
+  plugins: [],
+};
