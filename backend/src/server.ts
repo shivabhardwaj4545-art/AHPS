@@ -3,16 +3,20 @@ import { env } from './config/env.js';
 import { logger } from './config/logger.js';
 import { prisma } from './config/db.js';
 import { dispatchJob, QUEUE_NAMES } from './jobs/queue.js';
+import { autoInitializeDatabase } from './config/autoSeed.js';
 
 const PORT = env.PORT;
 
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, async () => {
   logger.info(`=======================================================`);
   logger.info(`🏫 ${env.APP_NAME}`);
   logger.info(`🚀 Server running on port ${PORT} [${env.NODE_ENV}]`);
   logger.info(`📑 Swagger Docs: http://localhost:${PORT}/api/docs`);
   logger.info(`🩺 Health Check: http://localhost:${PORT}/health`);
   logger.info(`=======================================================`);
+
+  // Ensure database tables and initial admin account exist
+  await autoInitializeDatabase();
 
   // Start periodic sync polling (e.g., every 15 minutes)
   setInterval(() => {
