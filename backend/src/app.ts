@@ -52,6 +52,17 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use('/api/', apiLimiter);
 
 // Health Check
+app.get('/', (req: Request, res: Response) => {
+  res.status(200).json({
+    status: 'HEALTHY',
+    service: env.APP_NAME,
+    message: 'AHPS Teacher Attendance & Payroll Management REST API is online.',
+    health: '/health',
+    docs: '/api/docs',
+    api: env.API_PREFIX,
+  });
+});
+
 app.get('/health', (req: Request, res: Response) => {
   res.status(200).json({
     status: 'HEALTHY',
